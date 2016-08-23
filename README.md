@@ -8,7 +8,8 @@
 
 ## Install
 
-NPM: `npm install mobx-logger` 
+NPM: `npm install mobx-logger`
+ 
 CDN: `https://npmcdn.com/mobx-logger/mobx-logger.umd.js` 
 
 ## Usage
