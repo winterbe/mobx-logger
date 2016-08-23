@@ -4,4 +4,4 @@
 node_modules
 *.log
 lib
-dist
+*.umd.js

@@ -34,3 +34,18 @@ enableLogging(config);
     compute: true|false
 }
 ```
+
+#### ReactNative
+
+For ReactNative development use this predicate to only enable logging in dev mode with JS debugging enabled:
+
+```js
+enableLogging({
+    predicate: () => __DEV__ && Boolean(window.navigator.userAgent),
+    ...
+});
+```
+
+## LICENSE
+
+MIT

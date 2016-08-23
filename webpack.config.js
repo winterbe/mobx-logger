@@ -6,7 +6,7 @@ module.exports = {
         libraryTarget: 'umd',
         library: 'mobxLogger',
         path: __dirname,
-        filename: 'dist/mobx-logger.umd.js'
+        filename: 'mobx-logger.umd.js'
     },
     resolve: {
         extensions: ['', '.js']
