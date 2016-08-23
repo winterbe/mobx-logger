@@ -1,6 +1,6 @@
 # MobX Logger
 
-![mobx-logger](http://imgur.com/a/6hzXq)
+![mobx-logger](https://raw.githubusercontent.com/winterbe/mobx-logger/master/docs/screenshot.png)
 
 <p align="center">
    <i>Follow on <a href="https://twitter.com/winterbe_">Twitter</a> for Updates</i>
@@ -8,8 +8,8 @@
 
 ## Install
 
-NPM: `npm install mobx-logger`
-CDN: `https://npmcdn.com/mobx-logger/mobx-logger.umd.js`
+NPM: `npm install mobx-logger` 
+CDN: `https://npmcdn.com/mobx-logger/mobx-logger.umd.js` 
 
 ## Usage
 
