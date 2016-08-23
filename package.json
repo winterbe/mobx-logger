@@ -1,0 +1,48 @@
+{
+  "name": "mobx-logger",
+  "version": "0.1.0",
+  "description": "Mobx Logger",
+  "main": "lib/index.js",
+  "scripts": {
+    "clean": "$(npm bin)/rimraf dist lib",
+    "build": "npm run build:lib && npm run build:umd",
+    "build:lib": "$(npm bin)/babel src --out-dir lib",
+    "build:umd": "webpack -p",
+    "prepublish": "npm run clean && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/winterbe/mobx-logger.git"
+  },
+  "author": "Benjamin Winterberg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/winterbe/mobx-logger/issues"
+  },
+  "files": [
+    "lib/",
+    "mobx-logger.umd.js"
+  ],
+  "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-core": "^6.13.2",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.13.2",
+    "mobx": "^2.4.2",
+    "rimraf": "^2.5.4",
+    "webpack": "^1.13.1"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "mobx": "^2.4.2"
+  },
+  "keywords": [
+    "mobx",
+    "mobx-logger",
+    "logger",
+    "logging",
+    "log",
+    "debug",
+    "state management"
+  ]
+}
