@@ -1,5 +1,7 @@
 # MobX Logger
 
+> Always know what is really going on in your MobX application by logging just the right information.
+
 ![mobx-logger](https://raw.githubusercontent.com/winterbe/mobx-logger/master/docs/screenshot.png)
 
 <p align="center">
@@ -24,6 +26,8 @@ enableLogging(config);
 ```
 
 ## Options
+
+Unlike MobX DevTools you can simply configure via which particular information should be logged to the console. Currently Actions, Reactions, Transactions and Computations are supported. MobX Logger won't log information about updating observables, use devTools instead.
 
 ```js
 {
