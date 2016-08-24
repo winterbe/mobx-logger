@@ -27,7 +27,7 @@ enableLogging(config);
 
 ## Options
 
-Unlike MobX DevTools you can simply configure via which particular information should be logged to the console. Currently Actions, Reactions, Transactions and Computations are supported. MobX Logger won't log information about updating observables, use devTools instead.
+Unlike MobX DevTools you can simply configure which particular information should be logged to the console. Currently Actions, Reactions, Transactions and Computations are supported.
 
 ```js
 {
