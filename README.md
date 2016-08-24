@@ -50,6 +50,6 @@ enableLogging({
 });
 ```
 
-## LICENSE
+## License
 
 MIT
