@@ -40,11 +40,7 @@ const logCompute = (ev) => {
     console.groupEnd();
 };
 
-export default (ev, options) => {
-    if (options[ev.type] !== true) {
-        return;
-    }
-
+const logEvent = (ev) => {
     switch (ev.type) {
         case 'action':
             logAction(ev);
@@ -59,4 +55,16 @@ export default (ev, options) => {
             logCompute(ev);
             return;
     }
+};
+
+export default (ev, options) => {
+    if (options[ev.type] !== true) {
+        return;
+    }
+
+    if (options.logFilter(ev) !== true) {
+        return;
+    }
+
+    logEvent(ev);
 }

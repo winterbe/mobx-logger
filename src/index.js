@@ -6,15 +6,19 @@ const defaultOptions = {
     reaction: true,
     transaction: true,
     compute: true,
-    predicate: () => true
+    logFilter: () => true
 };
 
-export const enableLogging = (options = defaultOptions) => {
-    const predicate = options.predicate || defaultOptions.predicate;
-    if (predicate() === true) {
-        return spy(ev => log(ev, options));
+const mergeOptions = (options) => {
+    if (options == null) {
+        return defaultOptions;
     }
-    return () => void(0);
+    return Object.assign({}, defaultOptions, options);
+};
+
+export const enableLogging = (options) => {
+    const mergedOptions = mergeOptions(options);
+    return spy(ev => log(ev, mergedOptions));
 };
 
 export default enableLogging;
