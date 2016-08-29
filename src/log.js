@@ -1,11 +1,12 @@
-import {padStart, now} from './utils';
+import {padStart, now, getName} from './utils';
 
 const style = (color, bold = true) => {
     return `color:${color};font-weight:${bold ? '600' : '300'};font-size:11px`;
 };
 
 const logAction = (ev) => {
-    console.groupCollapsed('%c%s  %s  %s.%s()', style('#000'), now(), padStart('ACTION', 8), ev.target, ev.name);
+    const name = getName(ev);
+    console.groupCollapsed('%c%s  %s  %s', style('#000'), now(), padStart('ACTION', 8), name);
     console.log('%cFunction %o', style('#777'), ev.fn);
     console.log('%cArguments %o', style('#777'), ev.arguments);
     console.log('%cTarget %o', style('#777'), ev.target);
@@ -14,7 +15,7 @@ const logAction = (ev) => {
 };
 
 const logReaction = (ev) => {
-    const name = ev.object.name.replace('#null', '');
+    const name = getName(ev);
     console.groupCollapsed('%c%s  %s  %s', style('#9E9E9E'), now(), padStart('REACTION', 8), name);
 
     const observables = ev.object.observing || [];
@@ -28,13 +29,14 @@ const logReaction = (ev) => {
 };
 
 const logTransaction = (ev) => {
-    console.groupCollapsed('%c%s  %s  %s', style('#7B7B7B'), now(), padStart('TX', 8));
+    const name = getName(ev);
+    console.groupCollapsed('%c%s  %s  %s', style('#7B7B7B'), now(), padStart('TX', 8), name);
     console.log('%cEvent %o', style('#777'), ev);
     console.groupEnd();
 };
 
 const logCompute = (ev) => {
-    const name = ev.object.name;
+    const name = getName(ev);
     console.groupCollapsed('%c%s  %s  %s', style('#9E9E9E'), now(), padStart('COMPUTE', 8), name);
     console.log('%cEvent %o', style('#777'), ev);
     console.groupEnd();
@@ -57,14 +59,8 @@ const logEvent = (ev) => {
     }
 };
 
-export default (ev, options) => {
-    if (options[ev.type] !== true) {
-        return;
+export default (ev, context) => {
+    if (context.shouldLog(ev)) {
+        logEvent(ev);
     }
-
-    if (options.logFilter(ev) !== true) {
-        return;
-    }
-
-    logEvent(ev);
 }

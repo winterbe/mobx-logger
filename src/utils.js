@@ -11,3 +11,10 @@ export const formatTime = (time) => {
 };
 
 export const now = () => formatTime(new Date());
+
+export const getName = ev => {
+    if (ev.type === 'action') {
+        return `${ev.target}.${ev.name}()`;
+    }
+    return ev.name || ev.object.name.replace('#null', '');
+};

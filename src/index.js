@@ -1,12 +1,10 @@
 import {spy} from 'mobx';
 import log from './log';
+import LogContext from './LogContext';
 
 const defaultOptions = {
-    action: true,
-    reaction: true,
-    transaction: true,
-    compute: true,
-    logFilter: () => true
+    logFilter: () => true,
+    rules: []
 };
 
 const mergeOptions = (options) => {
@@ -18,7 +16,8 @@ const mergeOptions = (options) => {
 
 export const enableLogging = (options) => {
     const mergedOptions = mergeOptions(options);
-    return spy(ev => log(ev, mergedOptions));
+    const context = new LogContext(mergedOptions);
+    return spy(ev => log(ev, context));
 };
 
 export default enableLogging;
