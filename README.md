@@ -12,7 +12,7 @@
 
 NPM: `npm install mobx-logger`
  
-CDN: `https://npmcdn.com/mobx-logger/mobx-logger.umd.js` 
+CDN: `https://unpkg.com/mobx-logger/mobx-logger.umd.js` 
 
 ## Usage
 
