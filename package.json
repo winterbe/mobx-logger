@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "$(npm bin)/rimraf dist lib",
     "build": "npm run build:lib && npm run build:umd",
-    "build:lib": "$(npm bin)/babel src --out-dir lib",
+    "build:lib": "$(npm bin)/babel src --out-dir lib && cp src/index.d.ts lib/index.d.ts",
     "build:umd": "webpack -p",
     "prepublish": "npm run clean && npm run build"
   },
