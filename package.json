@@ -44,5 +44,6 @@
     "log",
     "debug",
     "state management"
-  ]
+  ],
+  "typings": "lib/index.d.ts"
 }
