@@ -5,10 +5,10 @@ const style = (color, bold = true) => {
 };
 
 const logAction = (ev) => {
-    console.groupCollapsed('%c%s  %s  %s.%s()', style('#000'), now(), padStart('ACTION', 8), ev.target, ev.name);
+    console.groupCollapsed('%c%s  %s  %s.%s()', style('#000'), now(), padStart('ACTION', 8), ev.object, ev.name);
     console.log('%cFunction %o', style('#777'), ev.fn);
     console.log('%cArguments %o', style('#777'), ev.arguments);
-    console.log('%cTarget %o', style('#777'), ev.target);
+    console.log('%cTarget %o', style('#777'), ev.object);
     console.log('%cEvent %o', style('#777'), ev);
     console.groupEnd();
 };
@@ -28,13 +28,13 @@ const logReaction = (ev) => {
 };
 
 const logTransaction = (ev) => {
-    console.groupCollapsed('%c%s  %s  %s', style('#7B7B7B'), now(), padStart('TX', 8));
+    console.groupCollapsed('%c%s  %s  %s', style('#7B7B7B'), now(), padStart('TX', 8), ev.name);
     console.log('%cEvent %o', style('#777'), ev);
     console.groupEnd();
 };
 
 const logCompute = (ev) => {
-    const name = ev.object.name;
+    const name = ev.object;
     console.groupCollapsed('%c%s  %s  %s', style('#9E9E9E'), now(), padStart('COMPUTE', 8), name);
     console.log('%cEvent %o', style('#777'), ev);
     console.groupEnd();
