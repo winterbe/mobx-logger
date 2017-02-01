@@ -5,6 +5,8 @@ const style = (color, bold = true) => {
 };
 
 const logAction = (ev) => {
+    if (!ev.object) return;
+
     console.groupCollapsed('%c%s  %s  %s.%s()', style('#000'), now(), padStart('ACTION', 8), ev.object, ev.name);
     console.log('%cFunction %o', style('#777'), ev.fn);
     console.log('%cArguments %o', style('#777'), ev.arguments);
