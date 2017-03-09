@@ -5,7 +5,9 @@ const style = (color, bold = true) => {
 };
 
 const logAction = (ev) => {
-    console.groupCollapsed('%c%s  %s  %s.%s()', style('#000'), now(), padStart('ACTION', 8), ev.object, ev.name);
+    if (!ev.object) return;
+
+    console.groupCollapsed('%c%s  %s  %s.%s()', style('#000'), now(), padStart('ACTION', 8), ev.object.name || ev.object, ev.name);
     console.log('%cFunction %o', style('#777'), ev.fn);
     console.log('%cArguments %o', style('#777'), ev.arguments);
     console.log('%cTarget %o', style('#777'), ev.object);
@@ -35,7 +37,12 @@ const logTransaction = (ev) => {
 
 const logCompute = (ev) => {
     const name = ev.object;
-    console.groupCollapsed('%c%s  %s  %s', style('#9E9E9E'), now(), padStart('COMPUTE', 8), name);
+    let propName = ev.name || Object.keys(ev.object.$mobx.values)
+      .filter(key => ev.object.$mobx.values[key].derivation === ev.fn)[0] || '';
+
+    if (propName) propName = `.${propName}`;
+
+    console.groupCollapsed('%c%s  %s  %s%s', style('#9E9E9E'), now(), padStart('COMPUTE', 8), name, propName);
     console.log('%cEvent %o', style('#777'), ev);
     console.groupEnd();
 };
