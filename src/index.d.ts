@@ -5,4 +5,4 @@ export interface IMobXLoggerConfig {
     transaction?: boolean;
     compute?: boolean;
 }
-export function enableLogging(config: IMobXLoggerConfig): void
+export function enableLogging(config?: IMobXLoggerConfig): void
