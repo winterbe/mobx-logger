@@ -4,8 +4,10 @@
 
 ![mobx-logger](https://raw.githubusercontent.com/winterbe/mobx-logger/master/docs/screenshot.png)
 
+---
+
 <p align="center">
-   <i>Follow on <a href="https://twitter.com/winterbe_">Twitter</a> for Updates</i>
+<strong>★★★ Like this project? <a href="https://github.com/winterbe/mobx-logger/stargazers">Leave a star</a>, <a href="https://twitter.com/winterbe_">follow on Twitter</a> or <a href="https://www.paypal.me/winterbe">donate</a> to support my work! Thanks. ★★★</strong>
 </p>
 
 ## Install
