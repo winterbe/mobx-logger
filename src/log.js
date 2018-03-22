@@ -59,10 +59,10 @@ const logAction = (ev) => {
 };
 
 const logReaction = (ev) => {
-    const name = ev.object.name.replace('#null', '');
+    const name = ev.name.replace('#null', '');
     console.groupCollapsed('%c%s  %s  %s', style('#9E9E9E'), now(), padStart('REACTION', 8), name);
 
-    const observables = ev.object.observing || [];
+    const observables = ev.observing || [];
     const names = observables.map(it => it.name);
     if (names.length > 0) {
         console.log('%cObserving %o', style('#777'), names);
