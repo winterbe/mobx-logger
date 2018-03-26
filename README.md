@@ -27,6 +27,8 @@ const config = {...};
 enableLogging(config);
 ```
 
+> For Mobx 3 support please use Mobx Logger 0.6.0.
+
 ## Options
 
 Unlike MobX DevTools you can simply configure which particular information should be logged to the console. Currently Actions, Reactions, Transactions and Computations are supported.
