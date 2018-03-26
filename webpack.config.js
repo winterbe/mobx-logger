@@ -9,23 +9,16 @@ module.exports = {
         filename: 'mobx-logger.umd.js'
     },
     resolve: {
-        extensions: ['', '.js']
+        extensions: ['.js']
     },
     externals: {
         mobx: 'mobx'
     },
     module: {
-        loaders: [{
+        rules: [{
             test: /\.js$/,
             loader: 'babel-loader',
             exclude: [/node_modules/]
         }]
-    },
-    plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
-        })
-    ]
+    }
 };
