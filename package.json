@@ -1,6 +1,6 @@
 {
   "name": "mobx-logger",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Mobx Logger",
   "main": "lib/index.js",
   "scripts": {
