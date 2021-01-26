@@ -50,7 +50,7 @@ const logAction = (ev) => {
         return;
     }
 
-    console.groupCollapsed('%c%s  %s  %s.%s()', style('#000'), now(), padStart('ACTION', 8), ev.object.name || ev.object, ev.name);
+    console.groupCollapsed('%c%s  %s  %s.%s()', style('#8B91A3'), now(), padStart('ACTION', 8), ev.object.name || ev.object, ev.name);
     console.log('%cFunction %o', style('#777'), ev.fn);
     console.log('%cArguments %o', style('#777'), ev.arguments);
     console.log('%cTarget %o', style('#777'), ev.object);
