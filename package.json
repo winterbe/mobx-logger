@@ -8,7 +8,7 @@
     "build": "yarn build:lib && yarn build:umd",
     "build:lib": "babel src --out-dir lib && cp src/index.d.ts lib/index.d.ts",
     "build:umd": "webpack --mode production",
-    "prepublish": "yarn clean && yarn build"
+    "prepare": "yarn clean && yarn build"
   },
   "repository": {
     "type": "git",
