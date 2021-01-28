@@ -12,7 +12,7 @@ const defaultOptions = {
 export const enableLogging = (options = defaultOptions) => {
     const predicate = options.predicate || defaultOptions.predicate;
     if (predicate() === true) {
-        return spy(ev => log(ev, options));
+        return spy(ev => log(ev, Object.assign({}, defaultOptions, options)));
     }
     return () => void(0);
 };
